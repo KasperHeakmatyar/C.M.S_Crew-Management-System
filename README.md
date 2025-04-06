@@ -8,4 +8,5 @@ C.M.S 成员管理系统
 5. 查寻成员信息/Crew Profile Lookup => crew_lookup()
 6. 退出系统/Exit C.M.S => break
 7. 小彩蛋
+
 系统共6个功能，用户根据自己需求选取
