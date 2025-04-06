@@ -5,15 +5,25 @@ Crew_list = [{"name": "Big Boss", "age": 49, "skill": "sneak"},
 
 def menu():
     print("^" * 50)
-    print("""
-     CCCCC   M   M   SSSSS
-     C       MM MM   S
-     C       MM MM   S
-     C       M M M   SSSSS
-     C       M   M       S
-     C       M   M       S 
-     CCCCC . M   M . SSSSS V1.0 by Diamond Dogs
+    print("""                                                                                                                                                                                                                    
+        CCCCCCCCCCCCC                  MMMMMMMM               MMMMMMMM                     SSSSSSSSSSSSSSS 
+     CCC::::::::::::C                  M:::::::M             M:::::::M                   SS:::::::::::::::S
+   CC:::::::::::::::C                  M::::::::M           M::::::::M                  S:::::SSSSSS::::::S
+  C:::::CCCCCCCC::::C                  M:::::::::M         M:::::::::M                  S:::::S     SSSSSSS
+ C:::::C       CCCCCC                  M::::::::::M       M::::::::::M                  S:::::S            
+C:::::C                                M:::::::::::M     M:::::::::::M                  S:::::S            
+C:::::C                                M:::::::M::::M   M::::M:::::::M                   S::::SSSS         
+C:::::C                                M::::::M M::::M M::::M M::::::M                    SS::::::SSSSS    
+C:::::C                                M::::::M  M::::M::::M  M::::::M                      SSS::::::::SS  
+C:::::C                                M::::::M   M:::::::M   M::::::M                         SSSSSS::::S 
+C:::::C                                M::::::M    M:::::M    M::::::M                              S:::::S
+ C:::::C       CCCCCC                  M::::::M     MMMMM     M::::::M                              S:::::S
+  C:::::CCCCCCCC::::C                  M::::::M               M::::::M                  SSSSSSS     S:::::S
+   CC:::::::::::::::C      ......      M::::::M               M::::::M      ......      S::::::SSSSSS:::::S
+     CCC::::::::::::C      .::::.      M::::::M               M::::::M      .::::.      S:::::::::::::::SS 
+        CCCCCCCCCCCCC      ......      MMMMMMMM               MMMMMMMM      ......       SSSSSSSSSSSSSSS                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
     """)
+    print("You are on board, kept you waiting huh?")
     print("=" * 50)
     print("> 1. New Crew Info")
     print("> 2. Dismiss Crew")
@@ -26,15 +36,17 @@ def menu():
 
 
 def add_crew():
-    name_input = input("Enter New Crew's Name: ")
-    age_input = input("Enter New Crew's Age: ")
-    skill_input = input("Enter New Crew's Skill: ")
-    Crew_list.append({"name": name_input, "age": age_input, "skill": skill_input})
-    # print(Crew_list)
+    name_input = input("Enter New Crew's Name: (0 to quit)")
+    if name_input == "0":
+        return
+    else:
+        age_input = input("Enter New Crew's Age: ")
+        skill_input = input("Enter New Crew's Skill: ")
+        Crew_list.append({"name": name_input, "age": age_input, "skill": skill_input})
 
 
 def edit_crew():
-    name_input = input("Enter Crew's Name: ")
+    name_input = input("Enter Crew's Name: (0 to quit)")
     for i in Crew_list:
         if i["name"] == name_input:
             print(i)
@@ -46,12 +58,16 @@ def edit_crew():
             i["skill"] = edit_skill
             print(i)
             break
+        elif name_input == "0":
+            return
         else:
             print("Crew Not Found")
 
 
 def dismiss_crew():
-    dismiss_name = input("Enter the Crew's Name: ")
+    dismiss_name = input("Enter the Crew's Name: (0 to quit)")
+    if dismiss_name == "0":
+        return
     for i in Crew_list:
         if i["name"] == dismiss_name:
             Crew_list.remove(i)
@@ -66,6 +82,8 @@ def crew_lookup():
         lookup_name = input("Enter the Crew's Name: (0 to quit)")
         if lookup_name == i["name"]:
             print(i)
+        elif lookup_name == "0":
+            break
         else:
             print("Sorry, Crew Not Found")
 
@@ -102,13 +120,23 @@ while True:
             continue
         else:
             continue
-    elif user_input == "Boss" or user_input == "boss":
-        for abc in range(11):
-            print("The man who sold the world")
-            print()
+    elif user_input.lower() == "boss":
+        print("""
+  _______ _            __  __              __          ___              _____       _     _   _______ _           __          __        _     _ 
+ |__   __| |          |  \/  |             \ \        / / |            / ____|     | |   | | |__   __| |          \ \        / /       | |   | |
+    | |  | |__   ___  | \  / | __ _ _ __    \ \  /\  / /| |__   ___   | (___   ___ | | __| |    | |  | |__   ___   \ \  /\  / /__  _ __| | __| |
+    | |  | '_ \ / _ \ | |\/| |/ _` | '_ \    \ \/  \/ / | '_ \ / _ \   \___ \ / _ \| |/ _` |    | |  | '_ \ / _ \   \ \/  \/ / _ \| '__| |/ _` |
+    | |  | | | |  __/ | |  | | (_| | | | |    \  /\  /  | | | | (_) |  ____) | (_) | | (_| |    | |  | | | |  __/    \  /\  / (_) | |  | | (_| |
+    |_|  |_| |_|\___| |_|  |_|\__,_|_| |_|     \/  \/   |_| |_|\___/  |_____/ \___/|_|\__,_|    |_|  |_| |_|\___|     \/  \/ \___/|_|  |_|\__,_|                                                                                                                                                                                                                                                                                              
+        """)
         continue
     else:
-        for abc in range(11):
-            print("Wrong Way")
-            print()
-        continue
+        print("""
+        ██╗    ██╗██████╗  ██████╗ ███╗   ██╗ ██████╗     ██╗    ██╗ █████╗ ██╗   ██╗
+        ██║    ██║██╔══██╗██╔═══██╗████╗  ██║██╔════╝     ██║    ██║██╔══██╗╚██╗ ██╔╝
+        ██║ █╗ ██║██████╔╝██║   ██║██╔██╗ ██║██║  ███╗    ██║ █╗ ██║███████║ ╚████╔╝ 
+        ██║███╗██║██╔══██╗██║   ██║██║╚██╗██║██║   ██║    ██║███╗██║██╔══██║  ╚██╔╝  
+        ╚███╔███╔╝██║  ██║╚██████╔╝██║ ╚████║╚██████╔╝    ╚███╔███╔╝██║  ██║   ██║   
+         ╚══╝╚══╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝      ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝
+                    """)
+    continue
