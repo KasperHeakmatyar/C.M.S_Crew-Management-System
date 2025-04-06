@@ -11,6 +11,11 @@
 
 系统共6个功能，用户根据自己需求选取
 
+### 如何运行:
+1. 下载.py文件
+2. 用pycharm打开
+3. 运行
+
 ### Below is English Guide
 #### Requirement: Upon entering the system, display the system function interface. The functions are as follows:
 1. New Crew Info => add_crew()
