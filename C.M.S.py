@@ -4,7 +4,7 @@ Crew_list = [{"name": "Big Boss", "age": 49, "skill": "sneak"},
 
 
 def menu():
-    print("-" * 50)
+    print("-" * 110)
     print("""                                                                                                                                                                                                                    
         CCCCCCCCCCCCC                  MMMMMMMM               MMMMMMMM                     SSSSSSSSSSSSSSS 
      CCC::::::::::::C                  M:::::::M             M:::::::M                   SS:::::::::::::::S
@@ -23,8 +23,8 @@ C:::::C                                M::::::M    M:::::M    M::::::M          
      CCC::::::::::::C      .::::.      M::::::M               M::::::M      .::::.      S:::::::::::::::SS 
         CCCCCCCCCCCCC      ......      MMMMMMMM               MMMMMMMM      ......       SSSSSSSSSSSSSSS                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
     """)
-    print("You are on board, kept you waiting huh?")
-    print("=" * 50)
+    print("Kept you waiting huh?")
+    print("=" * 110)
     print("> 1. New Crew Info")
     print("> 2. Dismiss Crew")
     print("> 3. Edit Crew's Info")
@@ -32,7 +32,7 @@ C:::::C                                M::::::M    M:::::M    M::::::M          
     print("> 5. Crew Profile Lookup")
     print("> 6. Exit C.M.S")
     print("> ?. ???")
-    print("=" * 50)
+    print("=" * 110)
 
 
 def add_crew():
@@ -57,8 +57,8 @@ def edit_crew():
             i["name"] = edit_name
             i["age"] = edit_age
             i["skill"] = edit_skill
+            print(f"Editing {edit_name} successfully.")
             print(i)
-
             break
         elif name_input == "0":
             return
@@ -148,6 +148,16 @@ while True:
         """)
         input(" > Enter to return to C.M.S")
         continue
+    elif user_input == "?":
+        print("""      
+███╗   ██╗ ██████╗     ███████╗ █████╗ ███████╗████████╗███████╗██████╗     ███████╗ ██████╗  ██████╗ 
+████╗  ██║██╔═══██╗    ██╔════╝██╔══██╗██╔════╝╚══██╔══╝██╔════╝██╔══██╗    ██╔════╝██╔════╝ ██╔════╝ 
+██╔██╗ ██║██║   ██║    █████╗  ███████║███████╗   ██║   █████╗  ██████╔╝    █████╗  ██║  ███╗██║  ███╗
+██║╚██╗██║██║   ██║    ██╔══╝  ██╔══██║╚════██║   ██║   ██╔══╝  ██╔══██╗    ██╔══╝  ██║   ██║██║   ██║
+██║ ╚████║╚██████╔╝    ███████╗██║  ██║███████║   ██║   ███████╗██║  ██║    ███████╗╚██████╔╝╚██████╔╝
+╚═╝  ╚═══╝ ╚═════╝     ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝    ╚══════╝ ╚═════╝  ╚═════╝                                                                                                                                                                                                                                                                                          
+        """)
+        input(" > Enter to return to C.M.S")
     else:
         print("""
         ██╗    ██╗██████╗  ██████╗ ███╗   ██╗ ██████╗     ██╗    ██╗ █████╗ ██╗   ██╗
