@@ -25,6 +25,8 @@ C:::::C                                M::::::M    M:::::M    M::::::M          
     """)
     print("Kept you waiting huh?")
     print("=" * 110)
+    input("Press Enter to continue...")
+    print("-" * 110)
     print("> 1. New Crew Info")
     print("> 2. Dismiss Crew")
     print("> 3. Edit Crew's Info")
@@ -66,7 +68,6 @@ def edit_crew():
             print("Crew Not Found")
 
 
-
 def dismiss_crew():
     dismiss_name = input("Enter the Crew's Name: (0 to quit)")
     if dismiss_name == "0":
@@ -81,7 +82,6 @@ def dismiss_crew():
         print("Sorry, Crew Not Found")
 
 
-
 def crew_lookup():
     for i in Crew_list:
         lookup_name = input("Enter the Crew's Name: (0 to quit)")
@@ -92,7 +92,6 @@ def crew_lookup():
             break
         else:
             print("Sorry, Crew Not Found")
-
 
 
 def show_crew():
@@ -168,4 +167,3 @@ while True:
          ╚══╝╚══╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝      ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝
                     """)
         input(" > Enter to return to C.M.S")
-        menu()
