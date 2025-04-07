@@ -6,10 +6,11 @@
 3. 修改成员信息/Edit Crew's Info => edit_crew()
 4. 遍历所有成员信息/Show All Crew's Info => show_crew()
 5. 查寻成员信息/Crew Profile Lookup => crew_lookup()
-6. 退出系统/Exit C.M.S => break
-7. 小彩蛋
+6. 派遣成员/Deploy Personnel on Mission => ops_list()
+7. 退出系统/Exit C.M.S => break
+8. 小彩蛋
 
-系统共6个功能，用户根据自己需求选取
+系统共7个功能，用户根据自己需求选取
 
 ### 如何运行:
 1. 下载.py文件
@@ -23,10 +24,11 @@
 3. Edit Crew's Info => edit_crew()
 4. Show All Crew's Info => show_crew()
 5. Crew Profile Lookup => crew_lookup()
-6. Exit C.M.S => break
-7. Easter Egg
+6. Deploy Personnel on Mission => ops_list()
+7. Exit C.M.S => break
+8. Easter Egg
 
-The system has a total of 6 functions, and users select according to their needs.
+The system has a total of 7 functions, and users select according to their needs.
 
 Reference:
 [Text to Ascii art generator ](https://patorjk.com/software/taag/#p=display&h=0&v=0&f=ANSI%20Shadow&t=Type%20Something%20)
