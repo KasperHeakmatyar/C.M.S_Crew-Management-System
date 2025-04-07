@@ -154,7 +154,9 @@ def ops_list():
 def crew_select():
     while True:
         show_crew()
-        crew_input = input("Select the Personnel (0 to quit): ")
+        count_list = len(Crew_list)
+        print(f"Use 1 - {count_list} to Select ; 0 to quit)")
+        crew_input = input("Select the Personnel: ")
         if crew_input == "0":
             return
         elif crew_input != "0":
