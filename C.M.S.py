@@ -4,7 +4,7 @@ Crew_list = [{"name": "Big Boss", "age": 49, "skill": "sneak"},
 
 
 def menu():
-    print("^" * 50)
+    print("-" * 50)
     print("""                                                                                                                                                                                                                    
         CCCCCCCCCCCCC                  MMMMMMMM               MMMMMMMM                     SSSSSSSSSSSSSSS 
      CCC::::::::::::C                  M:::::::M             M:::::::M                   SS:::::::::::::::S
@@ -43,6 +43,7 @@ def add_crew():
         age_input = input("Enter New Crew's Age: ")
         skill_input = input("Enter New Crew's Skill: ")
         Crew_list.append({"name": name_input, "age": age_input, "skill": skill_input})
+        print(f"Adding {name_input} to the Crew List successfully.")
 
 
 def edit_crew():
@@ -57,11 +58,13 @@ def edit_crew():
             i["age"] = edit_age
             i["skill"] = edit_skill
             print(i)
+
             break
         elif name_input == "0":
             return
         else:
             print("Crew Not Found")
+
 
 
 def dismiss_crew():
@@ -72,9 +75,11 @@ def dismiss_crew():
         if i["name"] == dismiss_name:
             Crew_list.remove(i)
             print(f"{dismiss_name} has been dismissed")
+
             break
     else:
         print("Sorry, Crew Not Found")
+
 
 
 def crew_lookup():
@@ -82,10 +87,12 @@ def crew_lookup():
         lookup_name = input("Enter the Crew's Name: (0 to quit)")
         if lookup_name == i["name"]:
             print(i)
+
         elif lookup_name == "0":
             break
         else:
             print("Sorry, Crew Not Found")
+
 
 
 def show_crew():
@@ -99,18 +106,28 @@ while True:
     if user_input == "1":
         print("New Crew Info")
         add_crew()
+        input(" > Enter to return to C.M.S")
+
     elif user_input == "2":
         print("Dismiss Crew")
         dismiss_crew()
+        input(" > Enter to return to C.M.S")
+
     elif user_input == "3":
         print("Edit Crew's Info")
         edit_crew()
+        input(" > Enter to return to C.M.S")
+
     elif user_input == "4":
         print("Show All Crew's Info")
         show_crew()
+        input(" > Enter to return to C.M.S")
+
     elif user_input == "5":
         print("Crew Profile Lookup")
         crew_lookup()
+        input(" > Enter to return to C.M.S")
+
     elif user_input == "6":
         print("Exit C.M.S")
         exit_code = input("Are you sure you want to exit C.M.S? (y/n): ")
@@ -129,6 +146,7 @@ while True:
     | |  | | | |  __/ | |  | | (_| | | | |    \  /\  /  | | | | (_) |  ____) | (_) | | (_| |    | |  | | | |  __/    \  /\  / (_) | |  | | (_| |
     |_|  |_| |_|\___| |_|  |_|\__,_|_| |_|     \/  \/   |_| |_|\___/  |_____/ \___/|_|\__,_|    |_|  |_| |_|\___|     \/  \/ \___/|_|  |_|\__,_|                                                                                                                                                                                                                                                                                              
         """)
+        input(" > Enter to return to C.M.S")
         continue
     else:
         print("""
@@ -139,4 +157,5 @@ while True:
         ╚███╔███╔╝██║  ██║╚██████╔╝██║ ╚████║╚██████╔╝    ╚███╔███╔╝██║  ██║   ██║   
          ╚══╝╚══╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝      ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝
                     """)
-    continue
+        input(" > Enter to return to C.M.S")
+        menu()
