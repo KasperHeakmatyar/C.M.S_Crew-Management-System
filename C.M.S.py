@@ -37,7 +37,6 @@ def add_crew():
         Crew_list.append({"name": name_input, "age": age_input, "skill": skill_input})
         print(f"Adding {name_input} to the Crew List successfully.")
 
-
 def edit_crew():
     name_input = input("Enter Crew's Name: (0 to quit)")
     for i in Crew_list:
@@ -69,7 +68,6 @@ def dismiss_crew():
     else:
         print("Sorry, Crew Not Found")
 
-
 def crew_lookup():
     for i in Crew_list:
         lookup_name = input("Enter the Crew's Name: (0 to quit)")
@@ -80,7 +78,6 @@ def crew_lookup():
             break
         else:
             print("Sorry, Crew Not Found")
-
 
 def show_crew():
     for i in Crew_list:
@@ -149,7 +146,6 @@ def ops_list():
             print("Invalid Input")
             input("> Press Enter to Return")
             continue
-
 
 def crew_select():
     while True:
