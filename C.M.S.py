@@ -1,41 +1,31 @@
+import time
 Crew_list = [{"name": "Big Boss", "age": 49, "skill": "sneak"},
              {"name": "Kazuhira Miller", "age": 38, "skill": "debate"},
              {"name": "Revolver Ocelot", "age": 40, "skill": "interrogate"}]
 
-
 def menu():
     print("-" * 110)
-    print("""                                                                                                                                                                                                                    
-        CCCCCCCCCCCCC                  MMMMMMMM               MMMMMMMM                     SSSSSSSSSSSSSSS 
-     CCC::::::::::::C                  M:::::::M             M:::::::M                   SS:::::::::::::::S
-   CC:::::::::::::::C                  M::::::::M           M::::::::M                  S:::::SSSSSS::::::S
-  C:::::CCCCCCCC::::C                  M:::::::::M         M:::::::::M                  S:::::S     SSSSSSS
- C:::::C       CCCCCC                  M::::::::::M       M::::::::::M                  S:::::S            
-C:::::C                                M:::::::::::M     M:::::::::::M                  S:::::S            
-C:::::C                                M:::::::M::::M   M::::M:::::::M                   S::::SSSS         
-C:::::C                                M::::::M M::::M M::::M M::::::M                    SS::::::SSSSS    
-C:::::C                                M::::::M  M::::M::::M  M::::::M                      SSS::::::::SS  
-C:::::C                                M::::::M   M:::::::M   M::::::M                         SSSSSS::::S 
-C:::::C                                M::::::M    M:::::M    M::::::M                              S:::::S
- C:::::C       CCCCCC                  M::::::M     MMMMM     M::::::M                              S:::::S
-  C:::::CCCCCCCC::::C                  M::::::M               M::::::M                  SSSSSSS     S:::::S
-   CC:::::::::::::::C      ......      M::::::M               M::::::M      ......      S::::::SSSSSS:::::S
-     CCC::::::::::::C      .::::.      M::::::M               M::::::M      .::::.      S:::::::::::::::SS 
-        CCCCCCCCCCCCC      ......      MMMMMMMM               MMMMMMMM      ......       SSSSSSSSSSSSSSS                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+    print("""
+ ██████╗           ███╗   ███╗           ███████╗
+██╔════╝           ████╗ ████║           ██╔════╝
+██║                ██╔████╔██║           ███████╗
+██║                ██║╚██╔╝██║           ╚════██║
+╚██████╗    ██╗    ██║ ╚═╝ ██║    ██╗    ███████║
+ ╚═════╝    ╚═╝    ╚═╝     ╚═╝    ╚═╝    ╚══════╝ Version 1.0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
     """)
     print("Kept you waiting huh?")
     print("=" * 110)
-    input("Press Enter to continue...")
     print("-" * 110)
     print("> 1. New Crew Info")
     print("> 2. Dismiss Crew")
     print("> 3. Edit Crew's Info")
     print("> 4. Show All Crew's Info")
     print("> 5. Crew Profile Lookup")
-    print("> 6. Exit C.M.S")
+    print("> 6. Deploy Personnel on Mission")
+    print("> 7. Exit C.M.S")
     print("> ?. ???")
+    print("-" * 110)
     print("=" * 110)
-
 
 def add_crew():
     name_input = input("Enter New Crew's Name: (0 to quit)")
@@ -67,7 +57,6 @@ def edit_crew():
         else:
             print("Crew Not Found")
 
-
 def dismiss_crew():
     dismiss_name = input("Enter the Crew's Name: (0 to quit)")
     if dismiss_name == "0":
@@ -76,7 +65,6 @@ def dismiss_crew():
         if i["name"] == dismiss_name:
             Crew_list.remove(i)
             print(f"{dismiss_name} has been dismissed")
-
             break
     else:
         print("Sorry, Crew Not Found")
@@ -98,6 +86,84 @@ def show_crew():
     for i in Crew_list:
         print(i)
 
+def ops_list():
+    print("""
+180 150W  120W  90W   60W   30W  000   30E   60E   90E   120E  150E 180
+|    |     |     |     |     |    |     |     |     |     |     |     |
++90N-+-----+-----+-----+-----+----+-----+-----+-----+-----+-----+-----+
+|          . _..::__:  ,-"-"._       |7       ,     _,.__             |
+|  _.___ _ _<_>`!(._`.`-.    /        _._     `_ ,_/  '  '-._.---.-.__|
+|.{     " " `-==,',._\{  \  / {)     / _ ">_,-' `                mt-2_|
++ \_.:--.       `._ )`^-. "'      , [_/(                       __,/-' +
+|'"'     \         "    _L       oD_,--'                )     /. (|   |
+|         |           ,'         _)_.\\._<> 6              _,' /  '   |
+|         `.         /          [_/_'` `"(                <'}  )      |
++30N       \\    .-. )          /   `-'"..' `:._          _)  '       +
+|   `        \  (  `(          /         `:\  > \  ,-^.  /' '         |
+|             `._,   ""        |           \`'   \|   ?_)  {\         |
+|                `=.---.       `._._       ,'     "`  |' ,- '.        |
++000               |    `-._        |     /          `:`<_|h--._      +
+|                  (        >       .     | ,          `=.__.`-'\     |
+|                   `.     /        |     |{|              ,-.,\     .|
+|                    |   ,'          \   / `'            ,"     \     |
++30S                 |  /             |_'                |  __  /     +
+|                    | |                                 '-'  `-'   \.|
+|                    |/                                        "    / |
+|                    \.                                            '  |
++60S                                                                  +
+|                     ,/           ______._.--._ _..---.---------._   |
+|    ,-----"-..?----_/ )      _,-'"             "                  (  |
+|.._(                  `-----'                                      `-|
++90S-+-----+-----+-----+-----+----+-----+-----+-----+-----+-----+-----+
+    """)
+    print("-" * 110)
+    print("Fetching Available Crew...")
+    time.sleep(1.5)
+    print("System...OK")
+    time.sleep(1)
+    print("Crew...OK")
+    print("""
+ ######  #### ########  ########     #######  ########   ######  
+##    ##  ##  ##     ## ##          ##     ## ##     ## ##    ## 
+##        ##  ##     ## ##          ##     ## ##     ## ##       
+ ######   ##  ##     ## ######      ##     ## ########   ######  
+      ##  ##  ##     ## ##          ##     ## ##              ## 
+##    ##  ##  ##     ## ##          ##     ## ##        ##    ## 
+ ######  #### ########  ########     #######  ##         ######  
+    """)
+    print("> 1. Assist the Civilian Evacuation")
+    print("> 2. Defend the Refugee Camp")
+    print("> 3. Secure the Bridgeheads")
+    print("> 4. TBA")
+    ops_input = input("> Select an option: (0 to quit)")
+    if ops_input == "0":
+        return
+    elif ops_input != "4":
+        crew_select()
+    elif ops_input == "4":
+        print("Not Yet")
+        input("> Press Enter to Return")
+        ops_list()
+    else:
+        print("Invalid Input")
+        input("> Press Enter to Return")
+        ops_list()
+
+def crew_select():
+    while True:
+        show_crew()
+        crew_input = input("Select the Personnel (0 to quit): ")
+        if crew_input == "0":
+            return
+        elif crew_input != "0":
+            int_crewinput = int(crew_input)
+            if int_crewinput - 1 < len(Crew_list):
+                print(f"{Crew_list[int_crewinput - 1]['name']} has been dispatched, Transporting is on the way.")
+                break
+            else:
+                print("Invalid Input")
+                input("> Press Enter to Return")
+                break
 
 while True:
     menu()
@@ -128,9 +194,24 @@ while True:
         input(" > Enter to return to C.M.S")
 
     elif user_input == "6":
+        print("Waiting System Online...")
+        time.sleep(1.5)
+        print("System Online")
+        ops_list()
+        input(" > Enter to return to C.M.S")
+
+    elif user_input == "7":
         print("Exit C.M.S")
         exit_code = input("Are you sure you want to exit C.M.S? (y/n): ")
         if exit_code == "y" or exit_code == "Y":
+            print(f"""
+ █████╗ ██████╗ ██████╗ ██████╗  ██████╗  █████╗  ██████╗██╗  ██╗██╗███╗   ██╗ ██████╗     ██╗     ███████╗
+██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔═══██╗██╔══██╗██╔════╝██║  ██║██║████╗  ██║██╔════╝     ██║     ╚══███╔╝
+███████║██████╔╝██████╔╝██████╔╝██║   ██║███████║██║     ███████║██║██╔██╗ ██║██║  ███╗    ██║       ███╔╝ 
+██╔══██║██╔═══╝ ██╔═══╝ ██╔══██╗██║   ██║██╔══██║██║     ██╔══██║██║██║╚██╗██║██║   ██║    ██║      ███╔╝  
+██║  ██║██║     ██║     ██║  ██║╚██████╔╝██║  ██║╚██████╗██║  ██║██║██║ ╚████║╚██████╔╝    ███████╗███████╗
+╚═╝  ╚═╝╚═╝     ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝     ╚══════╝╚══════╝                                                                                                
+            """)
             break
         elif exit_code == "n" or exit_code == "N":
             continue
