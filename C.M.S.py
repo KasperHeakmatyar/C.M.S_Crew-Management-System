@@ -117,9 +117,9 @@ def ops_list():
         print("-" * 110)
         print("Fetching Available Crew...")
         time.sleep(1.5)
-        print("System...OK")
+        print(f"{'System...':<10}OK")
         time.sleep(1)
-        print("Crew...OK")
+        print(f"{'Crew...':<10}OK")
         print("""
          ######  #### ########  ########     #######  ########   ######  
         ##    ##  ##  ##     ## ##          ##     ## ##     ## ##    ## 
